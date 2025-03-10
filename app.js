@@ -16,18 +16,22 @@ function adicionarAmigo() {
 
    //Limpar o campo
    entradaNome.value = '';
+
+   atualizarLista();
 }
 
-function atualizarLista(amigo) {
-   let lista = document.getElementById('listaAmigos');
-   ///Mapear o array de amigos e criar uma lista de itens
-   lista.innerHTML = amigos.map(amigo => `<li>${amigo}</li>`).join('');
+function atualizarLista() {
+   let lista = document.querySelector('#listaAmigos');
+   if (lista) {
+      lista.innerHTML = amigos.map(amigo => `<li>${amigo}</li>`).join('');
+   }
+   
    }
 
    function sortearAmigo() {
       ///Verificar se há pelo menos um amigo na lista
       if (amigos.length === 0) {
-         alert('Adicione pelo menos um amigo antes de sortear!');
+         alert('Adicione pelo menos dois amigo antes de sortear!');
          return;
       }
 
