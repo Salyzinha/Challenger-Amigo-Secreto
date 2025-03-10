@@ -1,4 +1,5 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
+//Array para os nomes
 let amigos = [];
 
 function adicionarAmigo() {
@@ -17,3 +18,8 @@ function adicionarAmigo() {
    //Limpar o campo
    entradaNome.value = '';
 }
+
+function atualizarLista(amigo) {
+   let lista = document.getElementById('listaAmigos');
+   lista.innerHTML = amigos.map(amigo => ´<li>${amigo}</li>´).join('');
+   }
